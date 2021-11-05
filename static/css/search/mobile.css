@@ -1,0 +1,125 @@
+@media screen and (max-width: 600px) {
+    .main {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    .navigation {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .navigation.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle {
+        z-index: 10001;
+    }
+
+    .main.active .toggle {
+        position: fixed;
+        right: 0;
+        left: initial;
+        color: var(--white);
+    }
+
+    .result {
+        grid-template-columns: auto !important;
+    }
+
+    #records {
+        font-size: .8em ;
+    }
+
+    .results-content table thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    .results-content table tr {
+        border-bottom: 3px solid #ddd;
+        display: block;
+        margin-bottom: .625em;
+        box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .results-content table td {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    .results-content table td::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    .results-content table td:last-child {
+        border-bottom: 0;
+        text-align: center;
+    }
+
+    /* Details */
+    .header-details {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .card-especie {
+        margin-bottom: 5px;
+    }
+    .header-details h2 {
+        font-size: small;
+    }
+    .details {
+        display: flex !important;
+        flex-wrap: wrap;
+    }
+    .map {
+        height: 500px;
+        width: 100%;
+    }
+
+    /* Modal 
+    .especieBox, .dadosSolicitante, .contact, .institution, .enderecoBox {
+        flex-direction: column !important;
+    }
+    .modal {
+        height: 600px;
+    }*/
+    .modal-container {
+        left: auto !important;
+    }
+    .modal {
+        width: auto !important;
+        padding: 10px !important;
+    }
+    .page2 {
+        width: auto !important;
+        margin-left: 10px;
+    }
+    /*
+    .especieBox, .contact, .institution, .dadosSolicitante, .enderecoBox, .localBox {
+        justify-content: flex-start !important;
+    }*/
+    #fcodigo, #fFone, #fInstitution, #fsolicitante, #fEndereco {
+        margin-right: 5px;
+    }
+    #fcargo, #fdepartament {
+        width: 120px !important;
+    }
+    #fEndereco, #fsolicitante, #fInstitution {
+        width: 200px !important;
+    }
+
+}

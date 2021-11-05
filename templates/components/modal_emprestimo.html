@@ -1,0 +1,111 @@
+<!--MODAL SUCCESS-->
+{%if success %}
+<div class="modal-container show" id="modal-success">
+    <div class="modal modal-success">
+        <div class="head-modal">
+            <div id="successClose">
+            <ion-icon name="close-circle-outline"></ion-icon>
+            </div>
+        </div>
+        <h3>Solicitação enviada com sucesso!!</h3>
+    </div>
+</div>
+{% endif %}
+
+<div class="modal-container" id="modal-container">
+    <div class="modal">
+        <h2>Solicitação de Empréstimo</h2>
+        <form action="" method="POST">
+        <div class="form">
+            <div class="page1" id="form1">
+                             
+                    <div class="especieBox">
+                        <div class="codigo inputBox">
+                            <label for="codigo">Código</label>
+                            <input type="text" id="fcodigo" name="codigo" placeholder="{{response.codigo}}" disabled="">
+                        </div>
+                        <div class="especie inputBox">
+                            <label for="fespecie">Espécie</label>
+                            <input type="text" id="fespecie" name="fespecie" placeholder="{{response.especie}}" disabled=""> 
+                        </div> 
+                    </div>
+                    <div class="solicitanteBox">
+                        <div class="dadosSolicitante">
+                            <div class="solicitante inputBox">
+                                <label for="fsolicitante">Solicitante</label>
+                                <input type="text" id="fsolicitante" name="fsolicitante">
+                            </div>
+                            <div class="cargo inputBox">
+                                <label for="fcargo">Cargo</label>
+                                <input type="text" id="fcargo" name="fcargo">
+                            </div>
+                        </div>
+                        <div class="contact">
+                            <div class="fone inputBox">
+                                <label for="fFone">Telefone</label>
+                                <input type="text" id="fFone" name="fFone">
+                            </div>
+                            <div class="fEmail inputBox">
+                                <label for="fEmail">Email</label>
+                                <input type="text" id="fEmail" name="fEmail">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="institutionBox">
+                        <div class="institution">
+                            <div class="inputBox">
+                                <label for="finstituicao">Instituição</label>
+                                <input type="text" id="fInstitution" name="fInstitution">
+                            </div>
+                            <div class="inputBox">
+                                <label for="fdepartament">Departamento</label>
+                                <input type="text" id="fdepartament" name="fdepartament">
+                            </div>
+                        </div>
+                        <div class="enderecoBox">
+                            <div class="inputBox">
+                                <label for="fEndereco">Endereço</label>
+                                <input type="text" id="fEndereco" name="fEndereco">
+                            </div>
+                            
+                            <div class="inputBox">
+                                <label for="fcep">Cep</label>
+                                <input type="text" id="fcep" name="fcep">
+                            </div> 
+                        </div>
+                        <div class="localBox">
+                            <div class="inputBox">
+                                <label for="fCidade">Cidade</label>
+                                <input type="text" id="fCidade" name="fCidade">
+                            </div>
+                            <div class="inputBox">
+                                <label for="fPais">Pais</label>
+                                <input type="text" id="fPais" name="fPais">
+                            </div>
+
+                        </div>
+                    </div>
+               
+            
+            </div>
+            <div class="page2" id="comments">
+                <label for="comments">Deixe uma menssagem para os curadores:</label>
+                <textarea id="inputComments" name="comments" rows="20" >
+                </textarea>
+            </div>
+            <div class="footer-modal" id="footer-modal">
+                <div class="btn" id="close">Cancelar</div>
+                <div class="btn" id="next" value='proximo'>Próximo</div>
+            </div>
+        </div>
+        </form>
+        <!--LOADER-->
+        <div class="wait" id="wait">
+            <div class="box-loader">
+                <div class="loader-5 center"><span></span></div>
+            </div>
+            <h4>Aguarde. Sua solicitação está sendo processada...</h4>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,168 @@
+.modal-container {
+    position: fixed;
+    top: 80px;
+    left: calc(50% - 200px);
+    opacity: 0;
+    z-index: -1;
+}
+.modal-container.show 
+{
+    pointer-events: auto; 
+    opacity: 1;
+    z-index: 999;
+}
+.modal
+{
+    position: relative;
+    display: grid;
+    background: var(--grey);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 20px; 
+    height: 510px;
+    width: 450px; 
+}
+.modal h2
+{
+    padding: 5px;
+}
+
+.page2
+{
+    position: absolute;
+    display: flex;
+    flex-direction: column;  
+    height: 400px;
+    width: 410px;
+    top: 55px;
+    opacity: 0;
+    z-index: -1;
+}
+.page2.show 
+{
+    pointer-events: auto;
+    opacity: 1;
+    z-index: 999;
+}
+.page2 label
+{
+    padding: 5px;
+}
+
+.modal input[type=text] {
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    height: 35px;
+}
+
+.inputBox {
+    display: flex;
+    flex-direction: column;  
+}
+
+form .especieBox
+{
+  
+    background-color: var(--blue);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+form .solicitanteBox, .institutionBox
+{
+    background-color: var(--blue);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+form .dadosSolicitante, .contact, .institution, .enderecoBox, .localBox
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+#fcodigo, #fFone, #fcep, #fPais
+{
+    width: 100px;
+}
+
+#fcargo, #fdepartament, #fCidade 
+{
+    width: 150px;
+}
+#finstituicao, #fsolicitante, #fespecie, #fEmail
+{
+    width: 200px;
+}
+#fEndereco {
+    width: 250px;
+}
+.footer-modal
+{
+    
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-modal .btn {
+    margin-right: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+}
+.footer-modal button {
+    margin-right: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+}
+
+#inputComments
+{
+    padding: 10px;
+}
+.head-modal
+{
+    
+    height: 50px;
+    background: var(--blue);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+}
+.head-modal ion-icon
+{
+    color: var(--white);
+    font-size: 2em;
+    margin-right: 5px;
+}
+.modal-success
+{
+    padding: 0;
+    height: 200px;
+}

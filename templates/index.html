@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRG</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+
+</head>
+<body>
+    <link href="{{url_for('static', filename='css/style_home.css')}}" rel="stylesheet" /> 
+
+    {% include 'components/navbar.html' %}
+
+<!-- Header-->
+<header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 fs-3">Coleção</h1>
+                <h1 class="mx-auto my-0 text-uppercase">Recursos Genéticos</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-2">Mais de 70 mil itens de espécimes de aves, peixes, répteis e anfíbios</h2>
+                <h3>Acervos</h3>
+                <div class="collections">
+                    <a class="btn btn-lg btn-custom" href="{{url_for('main.acervo')}}"><i class="fas fa-dove"></i> Aves</a>
+                    <a class="btn btn-lg btn-custom" href="{{url_for('main.peixes')}}"><i class="fas fa-fish"></i> Peixes</a>
+                    <a class="btn btn-lg btn-custom" href="{{url_for('main.herpto')}}"><i class="fas fa-frog"></i> Herpto</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</header>
+<!-- Contact-->
+<section class="contact-section bg-black " id="contact">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-4 mb-3 ">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Endereço</h4>
+                        <hr class="my-4 mx-auto" />
+                        <div class="small text-black-50">
+                            <a href="https://www.gov.br/mcti/pt-br/rede-mcti/inpa/">
+                            INPA - Instituto Nacional de Pesquisas da Amazônia</a><br>
+                            Av. André Araújo, 2.936 - Petrópolis - CEP 69067-375 - Manaus -AM, Brasil</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-envelope text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Email</h4>
+                        <hr class="my-4 mx-auto" />
+                        <div class="small text-black-50"><a href="#!">crg@inpa.gov.br</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card py-4 h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                        <h4 class="text-uppercase m-0">Telefone</h4>
+                        <hr class="my-4 mx-auto" />
+                        <div class="small text-black-50">(92) 3643-3377</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</section>
+<script>
+document.getElementById('mainNav').classList.remove('bg-primary')
+
+</script>
+ 
+<!-- Bootstrap JavaScript -->
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+<!--Fontawesome-->
+<script src="https://kit.fontawesome.com/b0f9fb8134.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

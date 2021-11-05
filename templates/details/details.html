@@ -1,0 +1,209 @@
+{% extends "search/base.html" %}
+{% block title %}Detalhes{% endblock title %}
+{% block content %}
+<div class="topbar_details">
+    <div class="toggle">
+        <ion-icon name="menu-outline"></ion-icon>
+    </div>
+    <div class="return">
+        <ion-icon name="return-up-back-outline" onclick="goBack()"></ion-icon>
+    </div>
+    <div class="header-details">
+    <div class="card-especie">
+        <h2> <span>Especie: </span> {{response.especie}}</h2>
+    </div>
+    <div id="btnEmprestimo"><h2> Solcitar Empréstimo</h2></div>
+    </div>
+</div>
+<div class="details" id="details">
+    <div class="details-content">
+        <table>
+            <tbody>
+                <tr>
+                    <th>Código</th>
+                    <td id="codigo">{{response.codigo}}</td>
+                </tr>
+                <tr>
+                    <th>Espécie</th>
+                    <td id="especie">{{response.especie}}</td>
+                </tr>
+                <tr>
+                    <th>Genero</th>
+                    <td id="genero">{{response.genero}}</td>
+                </tr>
+                <tr>
+                    <th>Sexo</th>
+                    <td id="sexo">{{response.sexo}}</td>
+                </tr>
+                <tr>
+                    <th>Coletores</th>
+                    <td id="coletores">{{'; '.join(response.coletores)}}</td>
+                </tr>
+                <tr>
+                    <th>Data da Coleta</th>
+                    <td id="dataColeta">{{response.data}}</td>
+                </tr>
+                <tr>
+                    <th>Data da Preparação</th>
+                    <td id="dataPreparacao">{{response.preparacao}}</td>
+                </tr>
+                <tr>
+                    <th>Metódo de preservação</th>
+                    <td id="metodoPreservacao">{{response.preservacao}}</td>
+                </tr>
+                <tr>
+                    <th>Local</th>
+                    <td id="local">{{response.local}}</td>
+                </tr>
+                <tr>
+                    <th>Expedição</th>
+                    <td id="expedicao">{{response.expedicao}}</td>
+                </tr>
+                <tr>
+                    <th>Tempo de conservação</th>
+                    <td id="conservacao">{{response.conservacao}}</td>
+                </tr>
+                <tr>
+                    <th>Coração</th>
+                    <td id="coracao">{{response.coracao}}</td>
+                </tr>
+                <tr>
+                    <th>Fígado</th>
+                    <td id="figado">{{response.figado}}</td>
+                </tr>
+                <tr>
+                    <th>Musculo</th>
+                    <td id="musculo">{{response.musculo}}</td>
+                </tr>
+                <tr>
+                    <th>Sangue</th>
+                    <td id="sangue">{{response.sangue}}</td>
+                </tr>
+                <tr>
+                    <th>Latitude</th>
+                    <td id="lat">{{response.latitude}}</td>
+                </tr>
+                <tr>
+                    <th>Longitude</th>
+                    <td id="lon">{{response.longitude}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {%if response.latitude %}
+    <!--Mapa-->
+    <div class="map">
+        <div id="map"></div>
+    </div>
+    {% endif %}
+</div>
+{% include 'components/modal_emprestimo.html' %}
+
+<script>
+/* MODAL */
+{% if success %}
+const successClose = document.getElementById('successClose')
+const modal_success = document.getElementById('modal-success')
+successClose.addEventListener('click', () => {
+    modal_success.classList.remove('show')
+})
+{% endif %}
+
+/*Preencher Imput */
+const codigo = document.getElementById('fcodigo')
+codigo.value = "{{response.codigo}}"
+const especie = document.getElementById('fespecie')
+especie.value = "{{response.especie}}"
+
+const open = document.getElementById('btnEmprestimo')
+const close = document.getElementById('close')
+const modal_container = document.getElementById('modal-container')
+const next = document.getElementById('next')
+const comments = document.getElementById('comments')
+const form1 = document.getElementById('form1')
+const footer = document.getElementById('footer-modal') 
+const wait = document.getElementById('wait')
+
+open.addEventListener('click', () => {
+    modal_container.classList.add('show')
+    })
+close.addEventListener('click', () => {
+    modal_container.classList.remove('show')
+})
+next.addEventListener('click', () => {
+
+    if (next.attributes.value.value == "proximo") {
+        
+        comments.classList.add('show')
+        form1.style.opacity = 0
+        next.innerHTML = "Voltar"
+        next.setAttribute("value", "voltar")
+        const b = footer.querySelector('button')
+        const button = document.createElement('button')
+        const text = document.createTextNode("Solicitar")
+        button.appendChild(text)
+        footer.appendChild(button)
+        button.addEventListener('click', () => {
+            wait.classList.add('show')
+        })
+        
+    } else if (next.attributes.value.value == "voltar") {
+        
+        comments.classList.remove('show')
+        form1.style.opacity = 1
+        next.innerHTML = "Proximo"
+        next.setAttribute("value", "proximo")
+        footer.removeChild(footer.querySelector('button'))    
+    }
+    })
+
+
+/*BACK*/
+    function goBack() {
+    window.history.back()
+}
+
+/*Mapa*/
+const m = document.getElementById("map");
+const details = document.getElementById('details')
+
+if (m == null) {
+    details.style.display = "block"   
+}
+
+</script>
+
+{%if response.latitude %}
+<script>
+
+    const la = {{response.latitude}};
+    const lo = {{response.longitude}};
+    
+    ///const coleta = {lat: parseFloat(la.toFixed(4)), lng: parseFloat(lo.toFixed(4))}
+    //console.log(coleta)
+
+    var map;
+    function initMap() {
+    
+      //const coleta = {lat: parseFloat(lat), lng: parseFloat(lng) }
+      //const coleta = {lat: -4.025, lng: -69.453}
+      const coleta = {lat: la, lng: lo}
+      
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: coleta,
+        zoom: 8
+      });
+      const market = new google.maps.Marker({
+        position: coleta,
+        map: map,
+      })
+    }
+   
+
+
+</script>
+<script 
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAut1f54giN9DfzyLjnuqEo4X-nfhcmnQI&callback=initMap"  async defer>
+</script>
+{% endif %}
+{% endblock %}

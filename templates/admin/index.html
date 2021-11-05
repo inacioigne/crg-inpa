@@ -1,0 +1,17 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+ 
+  {% if not current_user.is_authenticated %}
+  <h1>Você precisa fazer login</h1>
+  <a href="{{url_for('main.login')}}"><button type="button">Login</button></a>
+  {% elif not current_user.admin %}
+  <h1>Você não permissão de administrador, entre em contado com os curadores da coleção</h1>
+  {% else %}
+  <h1>seja bem vindo {{current_user.username}}</h1>
+  <a href="{{url_for('main.logout')}}"><button type="button">Sair</button></a>
+  {%endif%}
+
+
+
+{% endblock %}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="{{url_for('static', filename='css/search/main.css')}}" rel="stylesheet" />
+   <!--
+    <link href="{{url_for('static', filename='css/dashboard.css')}}" rel="stylesheet" /> -->
+    <title>CRG - {% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="{{url_for('main.home')}}">
+                        <span class="icon"><ion-icon name="flask-outline"></ion-icon></span>
+                        <span class="title">CRG INPA</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('main.home')}}">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Início</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('main.aves')}}">
+                        <span class="icon"><i class="fas fa-dove"></i></span>
+                        <span class="title">Aves</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('main.peixes')}}">
+                        <span class="icon"><i class="fas fa-fish fa"></i></span>
+                        <span class="title">Peixes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{url_for('main.herpto')}}">
+                        <span class="icon"><i class="fas fa-frog"></i></span>
+                        <span class="title">Herpto</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="flask-outline"></ion-icon></ion-icon></span>
+                        <span class="title">Sobre</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://127.0.0.1:5000/#contact">
+                        <span class="icon"><ion-icon name="mail-open-outline"></ion-icon></span>
+                        <span class="title">Contato</span>
+                    </a>
+                </li>
+                <!--
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="trail-sign-outline"></ion-icon></span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>-->
+            </ul>
+        </div>
+        <div class="main">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>   
+    <!--ICONS-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+    <!--FONTAWESOME-->
+    <script src="https://kit.fontawesome.com/b0f9fb8134.js" crossorigin="anonymous"></script>
+    <!--DASHBOARD JS-->
+    <script src="{{url_for('static', filename='js/search/dashboard.js')}}"></script>
+</body>
+</html>

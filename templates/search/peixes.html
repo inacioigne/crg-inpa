@@ -1,0 +1,136 @@
+{% extends "search/base.html" %}
+{% block title %}Peixes{% endblock title %}
+{% block content %}
+{% include 'components/top_bar.html' %}
+
+<div class="result">
+    <div class="filter">
+        <div class="cardHeader">
+            <h2>Filtros</h2>
+        </div>
+        <div class="filterDate">
+            <h3>Por Data</h3>
+            <div class="fromDate">
+                <h4>A partir de:</h4>
+                <input type="date" placeholder="Data" id='fromDate'>    
+            </div>
+            <div class="toDate">
+                <h4>Até:</h4>
+                <input type="date" placeholder="Data" id='toDate'>    
+            </div>
+        </div>
+        <div class="btnFilter">
+            <button type="submit" id="filter">Filtrar</button>
+            <button type="submit" id="clean">Limpar</button>
+        </div> 
+                                        
+    </div>
+    <div class="results-content">
+        <div class="cardHeader">
+            <h2><span id="records"></span></h2>
+        </div>
+        <table id="table">
+            <thead>
+                <tr>
+                    <td>Coleção</td>
+                    <td>Código</td>
+                    <td>Espécie</td>
+                    <td>Local</td>
+                    <td>Data da Coleta</td>
+                    <td>Detalhes</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="hidden" id="tr-0">
+                    <td data-label="Coleção">Peixes</td>
+                    <td data-label="Codigo" id="cd-0"></td>
+                    <td data-label="Espécie" id="sp-0"></td>
+                    <td data-label="Local" id="lc-0"></td>
+                    <td data-label="Data" id="dt-0"></td>
+                    <td ><a id="lk-0" href="#"><span class="btnDetails">Detalhes</span></a></td>
+                </tr>
+                <tr class="hidden" id="tr-1">
+                    <td data-label="Coleção">Peixes</td>
+                    <td data-label="Codigo" id="cd-1"></td>
+                    <td data-label="Espécie" id="sp-1"></td>
+                    <td data-label="Local" id="lc-1"></td>
+                    <td data-label="Data" id="dt-1"></td>
+                    <td><a id="lk-1" href="#"><span class="btnDetails">Detalhes</span></a></td>
+                </tr>
+                <tr class="hidden" id="tr-2">
+                    <td data-label="Coleção">Peixes</td>
+                    <td data-label="Codigo" id="cd-2"></td>
+                    <td data-label="Espécie" id="sp-2"></td>
+                    <td data-label="Local" id="lc-2"></td>
+                    <td data-label="Data" id="dt-2"></td>
+                    <td><a id="lk-2" href="#"><span class="btnDetails">Detalhes</span></a></td>
+                </tr>
+                <tr class="hidden" id="tr-3">
+                    <td data-label="Coleção">Peixes</td>
+                    <td data-label="Codigo" id="cd-3"></td>
+                    <td data-label="Espécie" id="sp-3"></td>
+                    <td data-label="Local" id="lc-3"></td>
+                    <td data-label="Data" id="dt-3"></td>
+                    <td><a id="lk-3" href="#"><span class="btnDetails">Detalhes</span></a></td>
+                </tr>
+                <tr class="hidden" id="tr-4">
+                    <td data-label="Coleção">Peixes</td>
+                    <td data-label="Codigo" id="cd-4"></td>
+                    <td data-label="Espécie" id="sp-4"></td>
+                    <td data-label="Local" id="lc-4"></td>
+                    <td data-label="Data" id="dt-4"></td>
+                    <td><a id="lk-4" href="#"><span class="btnDetails">Detalhes</span></a></td>
+                </tr>
+                <tr class="hidden" id="tr-5">
+                    <td data-label="Coleção">Peixes</td>
+                    <td data-label="Codigo" id="cd-5"></td>
+                    <td data-label="Espécie" id="sp-5"></td>
+                    <td data-label="Local" id="lc-5"></td>
+                    <td data-label="Data" id="dt-5"></td>
+                    <td><a id="lk-5" href="#"><span class="btnDetails">Detalhes</span></a></td>
+                </tr>
+                <tr class="hidden" id="tr-6">
+                    <td data-label="Coleção">Peixes</td>
+                    <td data-label="Codigo" id="cd-6"></td>
+                    <td data-label="Espécie" id="sp-6"></td>
+                    <td data-label="Local" id="lc-6"></td>
+                    <td data-label="Data" id="dt-6"></td>
+                    <td><a id="lk-6" href="#"><span class="btnDetails">Detalhes</span></a></td>
+                </tr>
+                <tr class="hidden" id="tr-7">
+                    <td data-label="Coleção">Peixes</td>
+                    <td data-label="Codigo" id="cd-7"></td>
+                    <td data-label="Espécie" id="sp-7"></td>
+                    <td data-label="Local" id="lc-7"></td>
+                    <td data-label="Data" id="dt-7"></td>
+                    <td><a id="lk-7" href="#"><span class="btnDetails">Detalhes</span></a></td>
+                </tr>
+                <tr class="hidden" id="tr-8">
+                    <td data-label="Coleção">Peixes</td>
+                    <td data-label="Codigo" id="cd-8"></td>
+                    <td data-label="Espécie" id="sp-8"></td>
+                    <td data-label="Local" id="lc-8"></td>
+                    <td data-label="Data" id="dt-8"></td>
+                    <td><a id="lk-8" href="#"><span class="btnDetails">Detalhes</span></a></td>
+                </tr>
+                <tr class="hidden" id="tr-9">
+                    <td data-label="Coleção">Peixes</td>
+                    <td data-label="Codigo" id="cd-9"></td>
+                    <td data-label="Espécie" id="sp-9"></td>
+                    <td data-label="Local" id="lc-9"></td>
+                    <td data-label="Data" id="dt-9"></td>
+                    <td><a id="lk-9" href="#"><span class="btnDetails">Detalhes</span></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+<div class="footer-pagination">
+    <div class="pagination">
+    <button type="submit" id="previous">Anterior</button>
+    <button type="submit" id='next'>Próximo</button>
+    </div>
+</div>
+<script src="{{url_for('static', filename='js/search/peixes.js')}}"></script>
+{% endblock %}

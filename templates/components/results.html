@@ -1,0 +1,175 @@
+<div class="container">
+    <div class="row ">
+        <!-- BEGIN SEARCH RESULT -->
+        <div class="col-md-12 ">
+            <div class="grid search">
+                <div class="grid-body ">
+                    <div class="row">
+                        <!-- BEGIN FILTERS -->
+                        <div class="col-md-3">
+                            <h2 class="grid-title"> <i class="fa fa-filter"></i> Filtros</h2>
+                            <hr>
+                            <!-- BEGIN FILTER BY CATEGORY -->
+                            <h4>Por Coleção:</h4>
+                            <select class="form-select  mb-3" id='sl-2'>
+                                <option value="0" selected>Coleções</option>
+                                <option value="Aves">Aves</option>
+                                <option value="Peixes">Peixes</option>
+                                <option value="Herpeto">Herpeto</option>
+                            </select>
+                            <!--  BEGIN FILTER BY DATE -->
+                            <h4>Por Data:</h4>
+                            {% include 'components/datepicker.html' %}
+                            <button type="button" class="btn btn-primary" id="btn-fl">Filtrar</button>
+                             <button type="button" class="btn btn-info" id="btn-lp">Limpar Filtros</button>
+                    </div>
+                    <!-- BEGIN RESULT -->
+                    <div class="col-md-9">
+                        <h2><i class="fa fa-dove"></i> Resultados</i></h2>
+                        <hr>
+                        {% include 'components/search_bar.html' %}
+                        <hr>
+                        <p id='numFound'></p> 
+                        <div id='tbl'> 
+                            <table class="table table-hover" >
+                                <thead class="thead-light">
+                                    <tr>
+                                        <th scope="col" class="text-center">ID</th>
+                                        <th scope="col" class="text-center">Coleção</th>
+                                        <th scope="col" class="text-center">Espécie</th>
+                                        <th scope="col" class="text-center">Local</th>
+                                        <th scope="col" class="text-center">Data da Coleta</th>
+                                        <th scope="col" class="text-center">Detalhes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="d-none" id="tr-0">       
+                                        <th class="number text-center" scope="row" id="nb-0"></th>
+                                        <td class="image"><img src="" id="im-0"></td>
+                                        <td class="text-center fst-italic" id="sp-0"></td>
+                                        <td class="text-center" id="lc-0"></td>
+                                        <td class="text-center" id="dc-0"></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-info" id="lk-0">Detalhes</button>
+                                        </td>
+                                        
+                                    </tr>
+                                    <tr class="d-none" id="tr-1">                
+                                        <th class="number text-center" scope="row" id="nb-1"></th>
+                                        <td class="image"><img src="" id="im-1"></td>                                                                 
+                                        <td class="text-center fst-italic" id="sp-1"></td>
+                                        <td class="text-center" id="lc-1"></td>
+                                        <td class="text-center" id="dc-1"></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-info" id="lk-1">Detalhes</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="d-none" id="tr-2" >                
+                                      <th class="number text-center" scope="row" id="nb-2"></th>
+                                        <td class="image"><img src="" id="im-2"></td>
+                                        <td class="text-center fst-italic" id="sp-2"></td>
+                                        <td class="text-center" id="lc-2"></td>
+                                        <td class="text-center" id="dc-2"></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-info" id="lk-2">Detalhes</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="d-none" id="tr-3">                
+                                        <th class="number text-center" scope="row" id="nb-3"></th>
+                                        <td class="image"><img src="" id="im-3"></td>
+                                        <td class="text-center fst-italic" id="sp-3"></td>
+                                        <td class="text-center" id="lc-3"></td>
+                                        <td class="text-center" id="dc-3"></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-info" id="lk-3">Detalhes</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="d-none" id="tr-4">                
+                                        <th class="number text-center" scope="row" id="nb-4"></th>
+                                        <td class="image"><img src="" id="im-4"></td>
+                                        <td class="text-center fst-italic" id="sp-4"></td>
+                                        <td class="text-center" id="lc-4"></td>
+                                        <td class="text-center" id="dc-4"></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-info" id="lk-4">Detalhes</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="d-none" id="tr-5">                
+                                        <th class="number text-center" scope="row" id="nb-5"></th>
+                                        <td class="image"><img src="" id="im-5"></td>
+                                        <td class="text-center fst-italic" id="sp-5"></td>
+                                        <td class="text-center" id="lc-5"></td>
+                                        <td class="text-center" id="dc-5"></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-info" id="lk-5">Detalhes</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="d-none" id="tr-6">                
+                                        <th class="number text-center" scope="row" id="nb-6"></th>
+                                        <td class="image"><img src="" id="im-6"></td>
+                                        <td class="text-center fst-italic" id="sp-6"></td>
+                                        <td class="text-center" id="lc-6"></td>
+                                        <td class="text-center" id="dc-6"></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-info" id="lk-6">Detalhes</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="d-none" id="tr-7">                
+                                        <th class="number text-center" scope="row" id="nb-7"></th>
+                                        <td class="image"><img src="" id="im-7"></td>
+                                        <td class="text-center fst-italic" id="sp-7"></td>
+                                        <td class="text-center" id="lc-7"></td>
+                                        <td class="text-center" id="dc-7"></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-info" id="lk-7">Detalhes</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="d-none" id="tr-8">               
+                                        <th class="number text-center" scope="row" id="nb-8"></th>
+                                        <td class="image"><img src="" id="im-8"></td>
+                                        <td class="text-center fst-italic" id="sp-8"></td>
+                                        <td class="text-center" id="lc-8"></td>
+                                        <td class="text-center" id="dc-8"></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-info" id="lk-8">Detalhes</button>
+                                        </td>
+                                    </tr>
+                                    <tr class="d-none" id="tr-9">                
+                                        <th class="number text-center" scope="row" id="nb-9"></th>
+                                        <td class="image"><img src="" id="im-9"></td>
+                                        <td class="text-center fst-italic" id="sp-9"></td>
+                                        <td class="text-center" id="lc-9"></td>
+                                        <td class="text-center" id="dc-9"></td>
+                                        <td class="text-center">
+                                            <button type="button" class="btn btn-info" id="lk-9">Detalhes</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--PAGINATION-->
+                            <nav class="nav justify-content-end">
+                                <ul class="pagination ">
+                                    <li class="page-item" id="pg-pv">
+                                        <a class="page-link" href="#">
+                                            <span aria-hidden="true">Anterior</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item" id="pg-nx">
+                                        <a class="page-link" href="#">
+                                            <span aria-hidden="true">Próximo</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<!--API JS-->
+<script src="{{url_for('static', filename='js/search_api.js')}}"></script>
+<!--DETALHES-->
+<script src="{{url_for('static', filename='js/details.js')}}"></script>
